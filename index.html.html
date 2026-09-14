@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ZenFlow Yoga — mindful movement, live classes and wellness plans.">
+<title>ZenFlow Yoga | Move • Breathe • Become</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+
+<header class="nav">
+  <a class="brand" href="#home"><span class="brand-mark">✦</span><span>ZenFlow</span></a>
+  <nav>
+    <a href="#practice">Practice</a><a href="#live">Live</a><a href="#plans">Plans</a><a href="#about">About</a>
+  </nav>
+  <button class="nav-btn" onclick="openModal('loginModal')">Sign in</button>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy reveal">
+    <div class="eyebrow">MINDFUL MOVEMENT · EVERY DAY</div>
+    <h1>Move gently.<br><em>Live deeply.</em></h1>
+    <p>Build strength, calm your mind and make space for yourself with guided yoga practices and live sessions.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#practice">Explore practice <span>→</span></a>
+      <button class="btn ghost" onclick="openModal('videoModal')">▶ Watch intro</button>
+    </div>
+    <div class="mini-proof"><div class="avatars"><span>Y</span><span>A</span><span>R</span></div><div><strong>12,000+</strong><small>people practicing with us</small></div></div>
+  </div>
+  <div class="hero-art reveal">
+    <div class="sun"></div>
+    <div class="hero-card">
+      <div class="pose-illustration"><div class="head"></div><div class="body"></div><div class="arm a1"></div><div class="arm a2"></div><div class="leg l1"></div><div class="leg l2"></div></div>
+      <div class="pose-label"><span>Morning Flow</span><b>20 min · Beginner</b></div>
+    </div>
+    <div class="floating-card"><span class="pulse">●</span><div><b>Live now</b><small>Sunrise Yoga · 08:00</small></div></div>
+  </div>
+</section>
+
+<section class="stats reveal"><div><strong>100+</strong><span>guided practices</span></div><div><strong>7</strong><span>expert teachers</span></div><div><strong>4.9/5</strong><span>member rating</span></div><div><strong>24/7</strong><span>practice library</span></div></section>
+
+<section id="practice" class="section">
+  <div class="section-head reveal"><div><div class="eyebrow">FIND YOUR FLOW</div><h2>Practice for <em>every mood.</em></h2></div><a href="#" onclick="filterAll();return false;">View all →</a></div>
+  <div class="filters reveal"><button class="active" onclick="filterPractice('all',this)">All</button><button onclick="filterPractice('calm',this)">Calm</button><button onclick="filterPractice('strength',this)">Strength</button><button onclick="filterPractice('flexibility',this)">Flexibility</button><button onclick="filterPractice('focus',this)">Focus</button></div>
+  <div class="practice-grid">
+    <article class="practice-card large calm reveal"><div class="card-art art-one"><span>☀</span></div><div class="card-info"><div><h3>Morning Awakening</h3><p>Gentle energy · 15 min</p></div><button onclick="startPractice('Morning Awakening')">▶</button></div></article>
+    <article class="practice-card strength reveal"><div class="card-art art-two"><span>◒</span></div><div class="card-info"><div><h3>Core & Balance</h3><p>Build stability · 25 min</p></div><button onclick="startPractice('Core & Balance')">▶</button></div></article>
+    <article class="practice-card flexibility reveal"><div class="card-art art-three"><span>〰</span></div><div class="card-info"><div><h3>Deep Stretch</h3><p>Release tension · 30 min</p></div><button onclick="startPractice('Deep Stretch')">▶</button></div></article>
+    <article class="practice-card focus reveal"><div class="card-art art-four"><span>◉</span></div><div class="card-info"><div><h3>Mindful Focus</h3><p>Clear the mind · 10 min</p></div><button onclick="startPractice('Mindful Focus')">▶</button></div></article>
+  </div>
+</section>
+
+<section id="live" class="live-section">
+  <div class="live-copy reveal"><div class="eyebrow">JOIN US LIVE</div><h2>Your mat.<br><em>Our community.</em></h2><p>Practice with real teachers in real time. Ask questions, stay accountable and feel supported.</p><button class="btn light" onclick="openModal('scheduleModal')">See live schedule →</button></div>
+  <div class="schedule reveal">
+    <div class="live-badge"><span></span> LIVE SESSION</div>
+    <h3>Evening Wind Down</h3><p>Today · 7:30 PM · 30 min</p><div class="teacher"><div class="teacher-avatar">M</div><div><b>Maya Kapoor</b><small>Mindfulness teacher</small></div><button onclick="joinLive()">Join →</button></div>
+  </div>
+</section>
+
+<section id="plans" class="section plans">
+  <div class="section-head centered reveal"><div class="eyebrow">MEMBERSHIP</div><h2>Make wellness a <em>habit.</em></h2><p>Start free. Upgrade when you're ready for the full ZenFlow experience.</p></div>
+  <div class="pricing">
+    <article class="price-card reveal"><span class="plan-tag">FREE</span><h3>Starter</h3><div class="price">₹0 <small>/ forever</small></div><p>A simple place to begin.</p><ul><li>✓ 8 guided practices</li><li>✓ Weekly meditation</li><li>✓ Community access</li><li class="muted">× Live classes</li></ul><button class="btn outline" onclick="choosePlan('Starter')">Start free</button></article>
+    <article class="price-card featured reveal"><span class="popular">MOST POPULAR</span><span class="plan-tag">PREMIUM</span><h3>Flow</h3><div class="price">₹499 <small>/ month</small></div><p>Your complete daily practice.</p><ul><li>✓ 100+ guided practices</li><li>✓ Unlimited live classes</li><li>✓ Progress tracking</li><li>✓ New classes every week</li></ul><button class="btn primary" onclick="choosePlan('Flow')">Choose Flow →</button></article>
+    <article class="price-card reveal"><span class="plan-tag">PREMIUM</span><h3>Annual</h3><div class="price">₹3,999 <small>/ year</small></div><p>Best value for consistency.</p><ul><li>✓ Everything in Flow</li><li>✓ 2 months free</li><li>✓ Priority live sessions</li><li>✓ Annual wellness guide</li></ul><button class="btn outline" onclick="choosePlan('Annual')">Choose Annual</button></article>
+  </div>
+</section>
+
+<section id="about" class="testimonial reveal"><div class="quote-mark">“</div><blockquote>Yoga isn't about touching your toes. It's about what you learn on the way down.</blockquote><p>— ZenFlow philosophy</p></section>
+</main>
+
+<footer><div class="brand"><span class="brand-mark">✦</span><span>ZenFlow</span></div><p>Move • Breathe • Become</p><div><a href="#plans">Membership</a><a href="#live">Live classes</a><a href="#about">About</a></div></footer>
+
+<div class="modal" id="loginModal"><div class="modal-box"><button class="close" onclick="closeModal('loginModal')">×</button><div class="eyebrow">WELCOME BACK</div><h2>Continue your <em>practice.</em></h2><input placeholder="Email address" type="email"><input placeholder="Password" type="password"><button class="btn primary full" onclick="demoAction('Signed in (demo)');closeModal('loginModal')">Sign in →</button><small>Demo UI — connect a secure authentication service before launch.</small></div></div>
+<div class="modal" id="videoModal"><div class="modal-box video-box"><button class="close" onclick="closeModal('videoModal')">×</button><div class="fake-video"><span>▶</span><p>ZenFlow introduction</p></div><h3>Find a few quiet minutes for yourself.</h3></div></div>
+<div class="modal" id="scheduleModal"><div class="modal-box"><button class="close" onclick="closeModal('scheduleModal')">×</button><div class="eyebrow">THIS WEEK</div><h2>Live <em>schedule.</em></h2><div class="slot"><b>Mon · 7:30 PM</b><span>Evening Wind Down</span><button onclick="joinLive()">Join</button></div><div class="slot"><b>Wed · 8:00 AM</b><span>Sunrise Flow</span><button onclick="joinLive()">Join</button></div><div class="slot"><b>Sat · 9:00 AM</b><span>Weekend Reset</span><button onclick="joinLive()">Join</button></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
